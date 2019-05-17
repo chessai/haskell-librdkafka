@@ -1,0 +1,45 @@
+cabal-version: 2.2
+name:
+  librdkafka
+version:
+  0.1
+synopsis:
+  wrapper around librdkafka
+description:
+  this wrapper around librdkafka C api, intended for use with higher-level libraries.
+homepage:
+  https://github.com/chessai/librdkafka
+license:
+  BSD-3-Clause
+license-file:
+  LICENSE
+author:
+  chessai
+maintainer:
+  chessai1996@gmail.com
+copyright:
+  2018 chessai
+category:
+  Data
+build-type:
+  Simple
+extra-source-files:
+  ChangeLog.md
+
+library
+  hs-source-dirs:
+    src
+  default-language:
+    Haskell2010
+  ghc-options:
+    -Wall
+    -O2
+  extra-libraries:
+    rdkafka
+  build-tools:
+    c2hs
+  build-depends:
+    , base >= 4.11 && < 4.14
+    , bytestring
+  exposed-modules:
+    LibRdKafka
